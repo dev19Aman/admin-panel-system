@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { themeColors } from "../../utills/color";
 
 const dailySalesData = [
 	{ name: "Mon", sales: 1000 },
@@ -32,9 +33,9 @@ const DailySalesTrend = () => {
 								backgroundColor: "rgba(31, 41, 55, 0.8)",
 								borderColor: "#4B5563",
 							}}
-							itemStyle={{ color: "#E5E7EB" }}
+							itemStyle={{ color: "#14B8A6" }}
 						/>
-						<Bar dataKey='sales' fill='#10B981' />
+						<Bar dataKey='sales' fill={themeColors.tealBackground} />
 					</BarChart>
 				</ResponsiveContainer>
 			</div>

@@ -1,5 +1,6 @@
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { motion } from "framer-motion";
+import { themeColors } from "../../utills/color";
 
 const productPerformanceData = [
 	{ name: "Product A", sales: 4000, revenue: 2400, profit: 2400 },
@@ -12,7 +13,7 @@ const productPerformanceData = [
 const ProductPerformance = () => {
 	return (
 		<motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-lg rounded-xl p-6 border border-gray-700'
+			className={`${themeColors.background} ${themeColors.border} bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-lg rounded-xl p-6 border`}
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.4 }}
@@ -32,7 +33,7 @@ const ProductPerformance = () => {
 							itemStyle={{ color: "#E5E7EB" }}
 						/>
 						<Legend />
-						<Bar dataKey='sales' fill='#8B5CF6' />
+						<Bar dataKey='sales' fill={themeColors.tealBackground} />
 						<Bar dataKey='revenue' fill='#10B981' />
 						<Bar dataKey='profit' fill='#F59E0B' />
 					</BarChart>

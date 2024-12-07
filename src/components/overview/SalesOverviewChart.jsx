@@ -1,5 +1,6 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { motion } from "framer-motion";
+import { themeColors } from "../../utills/color";
 
 const salesData = [
 	{ name: "Jul", sales: 4200 },
@@ -19,8 +20,8 @@ const salesData = [
 const SalesOverviewChart = () => {
 	return (
 		<motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700'
-			initial={{ opacity: 0, y: 20 }}
+		className={`${themeColors.background} shadow-lg rounded-xl p-6 border ${themeColors.border}`}
+		initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.2 }}
 		>
@@ -42,9 +43,9 @@ const SalesOverviewChart = () => {
 						<Line
 							type='monotone'
 							dataKey='sales'
-							stroke='#6366F1'
+							stroke={themeColors.tealBackground}
 							strokeWidth={3}
-							dot={{ fill: "#6366F1", strokeWidth: 2, r: 6 }}
+							dot={{ fill: themeColors.tealBackground, strokeWidth: 2, r: 6 }}
 							activeDot={{ r: 8, strokeWidth: 2 }}
 						/>
 					</LineChart>

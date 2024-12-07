@@ -1,5 +1,6 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { motion } from "framer-motion";
+import { themeColors } from "../../utills/color";
 
 const userRetentionData = [
 	{ name: "Week 1", retention: 100 },
@@ -15,12 +16,12 @@ const userRetentionData = [
 const UserRetention = () => {
 	return (
 		<motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-lg rounded-xl p-6 border border-gray-700'
+		className={`${themeColors.background} shadow-lg rounded-xl p-6 border ${themeColors.border}`}
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.5 }}
 		>
-			<h2 className='text-xl font-semibold text-gray-100 mb-4'>User Retention</h2>
+			<h2 className='text-xl font-semibold text-gray-100 mb-4'>User Retention Insights</h2>
 			<div style={{ width: "100%", height: 300 }}>
 				<ResponsiveContainer>
 					<LineChart data={userRetentionData}>
@@ -32,10 +33,10 @@ const UserRetention = () => {
 								backgroundColor: "rgba(31, 41, 55, 0.8)",
 								borderColor: "#4B5563",
 							}}
-							itemStyle={{ color: "#E5E7EB" }}
+							itemStyle={{ color: themeColors.tealBackground }}
 						/>
 						<Legend />
-						<Line type='monotone' dataKey='retention' stroke='#8B5CF6' strokeWidth={2} />
+						<Line type='monotone' dataKey='retention' stroke={themeColors.tealBackground} strokeWidth={2} />
 					</LineChart>
 				</ResponsiveContainer>
 			</div>

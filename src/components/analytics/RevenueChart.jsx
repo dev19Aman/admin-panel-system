@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { themeColors } from "../../utills/color";
 
 const revenueData = [
 	{ month: "Jan", revenue: 4000, target: 3800 },
@@ -17,8 +18,8 @@ const RevenueChart = () => {
 
 	return (
 		<motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-lg rounded-xl p-6 border border-gray-700 mb-8'
-			initial={{ opacity: 0, y: 20 }}
+		className={`${themeColors.background} backdrop-filter backdrop-blur-lg shadow-lg rounded-xl p-6 border ${themeColors.border} mb-8`}
+		initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.2 }}
 		>
@@ -48,7 +49,7 @@ const RevenueChart = () => {
 						/>
 						<Legend />
 						<Area type='monotone' dataKey='revenue' stroke='#8B5CF6' fill='#8B5CF6' fillOpacity={0.3} />
-						<Area type='monotone' dataKey='target' stroke='#10B981' fill='#10B981' fillOpacity={0.3} />
+						<Area type='monotone' dataKey='target' stroke={themeColors.tealBackground} fill={themeColors.tealBackground} fillOpacity={0.3} />
 					</AreaChart>
 				</ResponsiveContainer>
 			</div>

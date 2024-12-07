@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { themeColors } from "../../utills/color";
 const salesByCategory = [
 	{ name: "Electronics", value: 400 },
 	{ name: "Clothing", value: 300 },
@@ -7,8 +8,14 @@ const salesByCategory = [
 	{ name: "Books", value: 100 },
 	{ name: "Others", value: 150 },
 ];
-
-const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff8042", "#0088FE"];
+const COLORS = [
+	themeColors.tealBackground,  // Green for 0-4
+	"#FF9800",  // Orange for 4-8
+	"#2196F3",  // Blue for 8-12
+	"#F44336",  // Red for 12-16
+	"#9C27B0",  // Purple for 16-20
+	"#FFC107",  // Yellow for 20-24
+  ];
 
 const SalesByCategoryChart = () => {
 	return (

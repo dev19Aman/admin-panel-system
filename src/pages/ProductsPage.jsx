@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Header from "../components/common/Header";
 import StatCard from "../components/common/StatCard";
 
-import { AlertTriangle, DollarSign, Package, TrendingUp } from "lucide-react";
+import { AlertCircle, AlertTriangle, Award, BarChart, Box, DollarSign, Package, TrendingUp } from "lucide-react";
 import CategoryDistributionChart from "../components/overview/CategoryDistributionChart";
 import SalesTrendChart from "../components/products/SalesTrendChart";
 import ProductsTable from "../components/products/ProductsTable";
@@ -11,7 +11,7 @@ import ProductsTable from "../components/products/ProductsTable";
 const ProductsPage = () => {
 	return (
 		<div className='flex-1 overflow-auto relative z-10'>
-			<Header title='Products' />
+			<Header title='Inventory' />
 
 			<main className='max-w-7xl mx-auto py-6 px-4 lg:px-8'>
 				{/* STATS */}
@@ -21,10 +21,10 @@ const ProductsPage = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1 }}
 				>
-					<StatCard name='Total Products' icon={Package} value={1234} color='#6366F1' />
-					<StatCard name='Top Selling' icon={TrendingUp} value={89} color='#10B981' />
-					<StatCard name='Low Stock' icon={AlertTriangle} value={23} color='#F59E0B' />
-					<StatCard name='Total Revenue' icon={DollarSign} value={"$543,210"} color='#EF4444' />
+				<StatCard name='Inventory Count' icon={Box} value={1234} color='#4F46E5' /> {/* Indigo-700 */}
+<StatCard name='Best Performers' icon={Award} value={89} color='#16A34A' /> {/* Green-600 */}
+<StatCard name='Critical Stock' icon={AlertCircle} value={23} color='#F97316' /> {/* Orange-500 */}
+<StatCard name='Gross Earnings' icon={BarChart} value={"$543,210"} color='#DC2626' /> {/* Red-600 */}
 				</motion.div>
 
 				<ProductsTable />

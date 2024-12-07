@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { themeColors } from "../../utills/color";
 
 const salesData = [
 	{ month: "Jan", sales: 4000 },
@@ -13,7 +14,7 @@ const salesData = [
 const SalesTrendChart = () => {
 	return (
 		<motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700'
+			className={`${themeColors.background}  shadow-lg rounded-xl p-6 border ${themeColors.border}`}
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.3 }}

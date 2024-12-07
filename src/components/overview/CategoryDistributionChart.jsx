@@ -1,25 +1,34 @@
 import { motion } from "framer-motion";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { themeColors } from "../../utills/color";
+
 
 const categoryData = [
-	{ name: "Electronics", value: 4500 },
-	{ name: "Clothing", value: 3200 },
-	{ name: "Home & Garden", value: 2800 },
-	{ name: "Books", value: 2100 },
-	{ name: "Sports & Outdoors", value: 1900 },
+	{ name: "Technology", value: 5000 },
+	{ name: "Fashion", value: 3500 },
+	{ name: "Health & Wellness", value: 3000 },
+	{ name: "Education", value: 2500 },
+	{ name: "Travel & Leisure", value: 2000 },
 ];
 
-const COLORS = ["#6366F1", "#8B5CF6", "#EC4899", "#10B981", "#F59E0B"];
-
+const COLORS = [
+	themeColors.tealBackground,  // Green for 0-4
+	"#FF9800",  // Orange for 4-8
+	"#2196F3",  // Blue for 8-12
+	"#F44336",  // Red for 12-16
+	"#9C27B0",  // Purple for 16-20
+	"#FFC107",  // Yellow for 20-24
+  ];
 const CategoryDistributionChart = () => {
 	return (
 		<motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700'
+		className={`${themeColors.background} overflow-hidden shadow-lg rounded-xl border ${themeColors.border} p-6`}
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.3 }}
 		>
-			<h2 className='text-lg font-medium mb-4 text-gray-100'>Category Distribution</h2>
+<h2 className='text-lg font-medium mb-4 text-gray-100'>Sales Breakdown by Category</h2>
+
 			<div className='h-80'>
 				<ResponsiveContainer width={"100%"} height={"100%"}>
 					<PieChart>

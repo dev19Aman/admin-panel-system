@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
 import { Edit, Search, Trash2 } from "lucide-react";
 import { useState } from "react";
+import { themeColors } from "../../utills/color";
 
 const PRODUCT_DATA = [
-	{ id: 1, name: "Wireless Earbuds", category: "Electronics", price: 59.99, stock: 143, sales: 1200 },
-	{ id: 2, name: "Leather Wallet", category: "Accessories", price: 39.99, stock: 89, sales: 800 },
-	{ id: 3, name: "Smart Watch", category: "Electronics", price: 199.99, stock: 56, sales: 650 },
-	{ id: 4, name: "Yoga Mat", category: "Fitness", price: 29.99, stock: 210, sales: 950 },
-	{ id: 5, name: "Coffee Maker", category: "Home", price: 79.99, stock: 78, sales: 720 },
+	{ id: 1, name: "Bluetooth Speaker", category: "Audio", price: 89.99, stock: 150, sales: 1350 },
+	{ id: 2, name: "Canvas Backpack", category: "Travel", price: 49.99, stock: 120, sales: 900 },
+	{ id: 3, name: "Gaming Chair", category: "Furniture", price: 249.99, stock: 40, sales: 400 },
+	{ id: 4, name: "Running Shoes", category: "Footwear", price: 69.99, stock: 180, sales: 1150 },
+	{ id: 5, name: "Ceramic Cookware Set", category: "Kitchen", price: 129.99, stock: 65, sales: 550 },
 ];
+
 
 const ProductsTable = () => {
 	const [searchTerm, setSearchTerm] = useState("");
@@ -26,13 +28,13 @@ const ProductsTable = () => {
 
 	return (
 		<motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700 mb-8'
+		className={`${themeColors.background} backdrop-blur-md shadow-lg rounded-xl p-6 border ${themeColors.border} mb-8`}
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.2 }}
 		>
 			<div className='flex justify-between items-center mb-6'>
-				<h2 className='text-xl font-semibold text-gray-100'>Product List</h2>
+				<h2 className='text-xl font-semibold text-gray-100'>Inventory Overview</h2>
 				<div className='relative'>
 					<input
 						type='text'
@@ -79,11 +81,11 @@ const ProductsTable = () => {
 								transition={{ duration: 0.3 }}
 							>
 								<td className='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-100 flex gap-2 items-center'>
-									<img
-										src='https://images.unsplash.com/photo-1627989580309-bfaf3e58af6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2lyZWxlc3MlMjBlYXJidWRzfGVufDB8fDB8fHww'
-										alt='Product img'
-										className='size-10 rounded-full'
-									/>
+								<div className='size-10 rounded-full flex items-center justify-center bg-gray-200'>
+	<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+		<path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553 4.553A3 3 0 0118.237 19H5.763a3 3 0 01-2.316-5.447L8 10m7 0V5a3 3 0 00-3-3 3 3 0 00-3 3v5m6 0H9" />
+	</svg>
+</div>
 									{product.name}
 								</td>
 

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { useState } from "react";
+import { themeColors } from "../../utills/color";
 
 const monthlySalesData = [
 	{ month: "Jan", sales: 4000 },
@@ -17,7 +18,7 @@ const SalesOverviewChart = () => {
 
 	return (
 		<motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700 mb-8'
+			className={`${themeColors.background} shadow-lg rounded-xl p-6 border ${themeColors.border} mb-8`}
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.2 }}
@@ -46,10 +47,10 @@ const SalesOverviewChart = () => {
 						<XAxis dataKey='month' stroke='#9CA3AF' />
 						<YAxis stroke='#9CA3AF' />
 						<Tooltip
-							contentStyle={{ backgroundColor: "rgba(31, 41, 55, 0.8)", borderColor: "#4B5563" }}
-							itemStyle={{ color: "#E5E7EB" }}
+							contentStyle={{ backgroundColor: "rgba(31, 41, 55, 0.8)", borderColor: "#14B8A6" }}
+							itemStyle={{ color: "#14B8A6" }}
 						/>
-						<Area type='monotone' dataKey='sales' stroke='#8B5CF6' fill='#8B5CF6' fillOpacity={0.3} />
+						<Area type='monotone' dataKey='sales' stroke='#14B8A6' fill='#14B8A6' fillOpacity={0.3} />
 					</AreaChart>
 				</ResponsiveContainer>
 			</div>
